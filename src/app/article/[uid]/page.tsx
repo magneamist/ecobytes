@@ -91,8 +91,8 @@ export default async function Page({ params }: { params: Params }) {
       <h2>Recommended Posts</h2>
       <section className="flex flex-col sm:grid sm:grid-cols-12 gap-8 w-full">
         {posts.map((post) => (
-          <div className="sm:col-span-4">
-            <ArticleCard key={post.id} post={post} />
+          <div className="sm:col-span-4" key={post.id}>
+            <ArticleCard post={post} />
           </div>
         ))}
       </section>

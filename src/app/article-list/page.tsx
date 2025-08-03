@@ -28,8 +28,8 @@ export default async function Home() {
       {/* Map over each of the blog posts created and display a `Article` for it */}
       <section className="flex flex-col sm:grid sm:grid-cols-12 gap-8 gap-y-20">
         {posts.map((post) => (
-          <div id="me" className="col-span-6">
-            <ArticleCard key={post.id} post={post} />
+          <div id="me" className="col-span-6" key={post.id}>
+            <ArticleCard  post={post} />
           </div>
         ))}
       </section>

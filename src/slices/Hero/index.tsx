@@ -1,8 +1,7 @@
 import { FC } from "react";
 import { Content } from "@prismicio/client";
-import { PrismicText, SliceComponentProps } from "@prismicio/react";
+import { SliceComponentProps } from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
-import RichText from "../RichText";
 
 /**
  * Props for `Hero`.
