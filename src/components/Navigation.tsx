@@ -1,8 +1,8 @@
-import LogoEcobytes from "@/app/icons/logo";
 import { Client, Content, isFilled } from "@prismicio/client";
 import { PrismicLink } from "@prismicio/react";
 import Link from "next/link";
 import { JSX } from "react";
+import { ResponsiveLogo } from "./ResponsiveLogo";
 
 export const Navigation = async ({
   client,
@@ -14,7 +14,7 @@ export const Navigation = async ({
   return (
     <div className="flex h-20 justify-between items-center sticky top-0 z-50">
       <Link href="/">
-        <LogoEcobytes height="20" width="fill" />
+        <ResponsiveLogo />
       </Link>
       <nav className="text-xl self-center">
         <ul className="flex gap-6">
