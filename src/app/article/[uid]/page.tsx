@@ -11,9 +11,6 @@ import { components } from "@/slices";
 import { PrismicNextImage } from "@prismicio/next";
 import { RichText } from "@/components/RichText";
 import { ArticleCard } from "@/components/ArticleCard";
-
-type Params = { uid: string };
-
 /**
  * This page renders a Prismic Document dynamically based on the URL.
  */
