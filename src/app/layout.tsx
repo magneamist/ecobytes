@@ -18,11 +18,11 @@ export default function RootLayout({
   const client = createClient();
   return (
     <html lang="en">
-      <Navigation client={client} />
       <body className={`${myFont.variable} mx-4 sm:mx-16 pb-10 sm:pb-20`}>
-        {children}
+        <Navigation client={client} />
+        <main>{children}</main>
+        <PrismicPreview repositoryName={repositoryName} />
       </body>
-      <PrismicPreview repositoryName={repositoryName} />
     </html>
   );
 }
