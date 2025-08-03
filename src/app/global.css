@@ -1,0 +1,27 @@
+@import "tailwindcss";
+body {
+  font-family: var(--font-uncut-sans);
+}
+
+h1 {
+  font-size: 4rem;
+  letter-spacing: -0.05em;
+  line-height: 110%;
+}
+
+h2 {
+  font-size: 2rem;
+  line-height: 105%;
+  letter-spacing: -0.05em;
+}
+
+h3 {
+  font-size: 1.5rem;
+  line-height: 105%;
+  letter-spacing: -0.05em;
+}
+
+p {
+  font-size: 1.25rem;
+  line-height: 130%;
+}
