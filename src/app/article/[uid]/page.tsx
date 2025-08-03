@@ -21,7 +21,7 @@ type Params = { uid: string };
 export async function generateMetadata({
   params,
 }: {
-  params: Params;
+  params: { uid: string };
 }): Promise<Metadata> {
   const client = createClient();
   const page = await client
@@ -42,11 +42,7 @@ export async function generateMetadata({
   };
 }
 
-interface PageProps {
-  params: Params;
-}
-
-export default async function Page({ params }: PageProps) {
+export default async function Page({ params }: { params: { uid: string } }) {
   const client = createClient();
 
   // Fetch the current blog post page being displayed by the UID of the page
