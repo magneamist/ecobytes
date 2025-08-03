@@ -22,7 +22,7 @@ export const ArticleCard = ({
         <div className="absolute inset-0 bg-black/20 hover:bg-black/0 duration-200 rounded-lg"></div>
         <div className="bg-white/10 backdrop-blur-sm flex items-center py-2 px-4 rounded-full border border-white absolute top-3 left-3">
           <span className="text-white text-sm">
-            {new Date(data?.publication_date || "").toLocaleDateString()}
+            {new Date(data?.publication_date || "").toLocaleDateString("is-IS")}
           </span>
         </div>
         <button className="bg-white/10 backdrop-blur-sm flex items-center gap-3 p-4 rounded-full border border-white absolute bottom-3 right-3">
