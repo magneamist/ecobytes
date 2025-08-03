@@ -18,12 +18,11 @@ import { ArticleCard } from "@/components/ArticleCard";
 export async function generateMetadata({
   params,
 }: {
-  params: { uid: string };
+  params: Promise<{ uid: string }>;
 }): Promise<Metadata> {
+  const { uid } = await params;
   const client = createClient();
-  const page = await client
-    .getByUID("article", params.uid)
-    .catch(() => notFound());
+  const page = await client.getByUID("article", uid).catch(() => notFound());
 
   return {
     title: prismic.asText(page.data.title),
@@ -39,16 +38,19 @@ export async function generateMetadata({
   };
 }
 
-export default async function Page({ params }: { params: { uid: string } }) {
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ uid: string }>;
+}) {
+  const { uid } = await params;
   const client = createClient();
 
   // Fetch the current blog post page being displayed by the UID of the page
-  const page = await client
-    .getByUID("article", params.uid)
-    .catch(() => notFound());
+  const page = await client.getByUID("article", uid).catch(() => notFound());
 
   const posts = await client.getAllByType("article", {
-    predicates: [prismic.filter.not("my.article.uid", params.uid)],
+    predicates: [prismic.filter.not("my.article.uid", uid)],
     orderings: [
       { field: "my.article.publication_date", direction: "desc" },
       { field: "document.first_publication_date", direction: "desc" },
