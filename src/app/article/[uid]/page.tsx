@@ -42,7 +42,11 @@ export async function generateMetadata({
   };
 }
 
-export default async function Page({ params }: { params: Params }) {
+interface PageProps {
+  params: Params;
+}
+
+export default async function Page({ params }: PageProps) {
   const client = createClient();
 
   // Fetch the current blog post page being displayed by the UID of the page
